@@ -62,6 +62,8 @@
           SDL_RenderSetLogicalSize
           SDL_RenderFillRect
           SDL_RenderDrawRect
+          SDL_RenderDrawLine
+          SDL_RenderDrawLines
           SDL_RenderPresent
 
           SDL_GetError
