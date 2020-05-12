@@ -180,6 +180,7 @@
 
 (define SDL_CreateTexture (c-lambda (SDL_Renderer* unsigned-int32 int int int) SDL_Texture* "SDL_CreateTexture"))
 (define SDL_CreateTextureFromSurface (c-lambda (SDL_Renderer* SDL_Surface*) SDL_Texture* "SDL_CreateTextureFromSurface"))
+(define SDL_DestroyTexture (c-lambda (SDL_Texture*) void "SDL_DestroyTexture"))
 (define SDL_SetTextureAlphaMod (c-lambda (SDL_Texture* unsigned-int8) int "SDL_SetTextureAlphaMod"))
 (define SDL_SetTextureBlendMode (c-lambda (SDL_Texture* SDL_BlendMode) int "SDL_SetTextureBlendMode"))
 (define SDL_SetTextureColorMod (c-lambda (SDL_Texture* unsigned-int8 unsigned-int8 unsigned-int8) int "SDL_SetTextureColorMod"))

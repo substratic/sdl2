@@ -21,7 +21,10 @@
 
           SDL_CreateWindow
           SDL_CreateRenderer
+
+          SDL_CreateTexture
           SDL_CreateTextureFromSurface
+          SDL_DestroyTexture
 
           SDL_FreeSurface
 
