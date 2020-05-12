@@ -13,11 +13,16 @@
           SDL_PollEvent
           SDL_Event-type
           SDL_Event-key
+          SDL_Event-button
 
           SDL_KeyboardEvent-keysym
           SDL_KeyboardEvent-repeat
           SDL_Keysym-sym
           SDL_Keysym-mod
+
+          SDL_MouseButtonEvent-button
+          SDL_MouseButtonEvent-x
+          SDL_MouseButtonEvent-y
 
           SDL_CreateWindow
           SDL_CreateRenderer
@@ -77,6 +82,12 @@
           SDL_KEYUP
           SDL_MOUSEBUTTONUP
           SDL_MOUSEBUTTONDOWN
+
+          SDL_BUTTON_LEFT
+          SDL_BUTTON_RIGHT
+          SDL_BUTTON_MIDDLE
+          SDL_BUTTON_X1
+          SDL_BUTTON_X2
 
           SDLK_UNKNOWN
           SDLK_RETURN

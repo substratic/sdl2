@@ -43,7 +43,7 @@
 ;; (c-define-type* (struct SDL_TextEditingEvent))
 ;; (c-define-type* (struct SDL_TextInputEvent))
 ;; (c-define-type* (struct SDL_TouchFingerEvent))
-;; (c-define-type* (struct SDL_MouseButtonEvent))
+(c-define-type* (struct SDL_MouseButtonEvent))
 ;; (c-define-type* (struct SDL_MouseMotionEvent))
 ;; (c-define-type* (struct SDL_MouseWheelEvent))
 ;; (c-define-type* (struct SDL_MultiGestureEvent))
@@ -116,14 +116,25 @@
                  (repeat unsigned-int8)
                  (keysym (struct SDL_Keysym)))
 
+(c-define-struct SDL_MouseButtonEvent
+                 (type unsigned-int32)
+                 (timestamp unsigned-int32)
+                 (windowID unsigned-int32)
+                 (which unsigned-int32)
+                 (button unsigned-int8)
+                 (state unsigned-int8)
+                 (clicks unsigned-int8)
+                 (x int)
+                 (y int))
+
 (c-define-union SDL_Event
                 (type unsigned-int32)
                 (window (struct SDL_WindowEvent))
-                (key (struct SDL_KeyboardEvent)))
+                (key (struct SDL_KeyboardEvent))
                 ;; (edit (struct SDL_TextEditingEvent))
                 ;; (text (struct SDL_TextInputEvent))
                 ;; (motion (struct SDL_MouseMotionEvent))
-                ;; (button (struct SDL_MouseButtonEvent))
+                (button (struct SDL_MouseButtonEvent)))
                 ;; (wheel (struct SDL_MouseWheelEvent))
                 ;; (jaxis (struct SDL_JoyAxisEvent))
                 ;; (jball (struct SDL_JoyBallEvent))
@@ -311,6 +322,13 @@
  SDL_DROPFILE
  SDL_USEREVENT
  SDL_LASTEVENT)
+
+(c-define-constants
+ SDL_BUTTON_LEFT
+ SDL_BUTTON_RIGHT
+ SDL_BUTTON_MIDDLE
+ SDL_BUTTON_X1
+ SDL_BUTTON_X2)
 
 (c-define-constants
  SDL_RENDERER_SOFTWARE
